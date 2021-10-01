@@ -2,3 +2,6 @@
 *.pdf
 *.zip
 *.rar
+*.idea
+*.iml
+cactus-graph/out
