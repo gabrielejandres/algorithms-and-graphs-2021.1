@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.regex.Pattern;
 
 public class FileController {
     private String fileName;
