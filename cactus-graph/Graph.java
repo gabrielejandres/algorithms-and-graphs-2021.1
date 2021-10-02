@@ -118,7 +118,7 @@ public class Graph {
         vertex.d = ++this.time;
         vertex.low = vertex.d;
 
-        for(Vertex neighbor : vertex.neighborhood.values( ) ) {
+        for(Vertex neighbor : vertex.neighborhood.values( )) {
             if(neighbor.d == null) {
                 this.stack.push(vertex); // aresta de árvore
                 this.stack.push(neighbor);
