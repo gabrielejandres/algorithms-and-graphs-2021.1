@@ -24,27 +24,28 @@ public class FileController {
         try {
             FileReader fileReader = new FileReader(this.fileName);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            int vertexId, neighborVertexId;
+            Integer vertexId, neighborVertexId;
 
             while ((row = bufferedReader.readLine( )) != null) {
                 row = row.replaceAll("\\s+", " ").trim(); // remove espaços em branco
 
-                // Verifica se a linha está no padrão
-                if (!Pattern.matches("[1-9][0-9]*+\\s+=(\\s+[1-9][0-9]*)*", row)) {
+                try {
+                    data = row.split(" ");
+                    vertexId = Integer.parseInt(row.split(" = ")[0]);
+
+                    if(!graph.vertexSet.containsKey(vertexId))
+                        graph.addVertex(vertexId);
+
+                    for(int i = 2; i < data.length; i++) {
+                        neighborVertexId = Integer.parseInt(data[i]);
+                        if(!graph.vertexSet.containsKey(neighborVertexId))
+                            graph.addVertex(neighborVertexId);
+                        graph.addArc(vertexId, neighborVertexId);
+                    }
+                } catch (NumberFormatException e) {
                     System.out.println("As linhas de entrada devem estar no padrão <vertice> = <vizinho1> <vizinho2> ... Por exemplo: 1 = 2 3 4");
+                    bufferedReader.close();
                     System.exit(1);
-                }
-
-                data = row.split(" ");
-                vertexId = Integer.parseInt(data[0]);
-                if(!graph.vertexSet.containsKey(vertexId))
-                    graph.addVertex(vertexId);
-
-                for(int i = 2; i < data.length; i++) {
-                    neighborVertexId = Integer.parseInt(data[i]);
-                    if(!graph.vertexSet.containsKey(neighborVertexId))
-                        graph.addVertex(neighborVertexId);
-                    graph.addArc(vertexId, neighborVertexId);
                 }
             }
             bufferedReader.close();

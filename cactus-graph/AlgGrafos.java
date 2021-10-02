@@ -6,11 +6,8 @@ public class AlgGrafos {
         // Lê o grafo do arquivo e valida se o arquivo está no formato especificado
         fileController.readGraph(graph);
 
-        // Verifica os requisitos do grafo de entrada. Deve não direcionado
+        // Verifica os requisitos do grafo de entrada. Deve ser não direcionado
         graph.isUndirected();
-
-        // Cria os blocos (componentes biconexas)
-        graph.biconnectedComponents();
 
         // Verifica se o grafo é cacto
         graph.isCactusGraph();

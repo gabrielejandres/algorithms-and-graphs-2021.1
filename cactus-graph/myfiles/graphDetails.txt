@@ -1,0 +1,5 @@
+#grafo01.txt: Exemplo de grafo cacto
+#grafo02.txt: Exemplo de grafo que não é cacto
+#grafo03.txt: Exemplo de entrada inválida. O grafo é direcionado
+#grafo04.txt: Exemplo de grafo que não é cacto. O grafo não é conectado
+#grafo05.txt: Exemplo de grafo cacto
