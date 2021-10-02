@@ -105,7 +105,7 @@ public class Graph {
     }
 
     /**
-     * Auxiliar para a função de criação de componentes biconexas. Busca em profundidade no grafo.
+     * Auxiliar para o método de encontrar componentes biconexas. Busca em profundidade no grafo.
      * @param vertex vértice de partida
      */
     private void biconnectedComponentVisit(Vertex vertex) {
