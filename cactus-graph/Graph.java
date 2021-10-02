@@ -140,7 +140,7 @@ public class Graph {
     /**
      * Cria uma nova componente biconexa
      */
-    private void createNewBiconnectedComponent(Vertex vertex, Vertex auxiliarVertex) {
+    private void createNewBiconnectedComponent(Vertex cutVertex, Vertex auxiliarVertex) {
         Graph biconnectedComponent = new Graph(); // cria um grafo para armazenar o subgrafo correspondente à componente biconexa (bloco)
 
         this.biconnectedComponents.add(biconnectedComponent);
@@ -148,7 +148,7 @@ public class Graph {
         Vertex vertex1 = this.stack.pop();
 
         // Atribui os dados presentes na pilha para a componente biconexa (bloco)
-        while(vertex1 != vertex || vertex2 != auxiliarVertex) {
+        while(vertex1 != cutVertex || vertex2 != auxiliarVertex) {
             if(this.stack.empty( ))
                 return;
             biconnectedComponent.addEdge(vertex1.id, vertex2.id);
