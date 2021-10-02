@@ -5,7 +5,6 @@ public class Vertex {
     protected HashMap<Integer, Vertex> neighborhood;
     protected Vertex parent;
     protected Integer d, low;
-    protected boolean visited;
 
     /**
      * Construtor do vértice
@@ -16,7 +15,6 @@ public class Vertex {
         this.neighborhood = new HashMap<Integer,Vertex>();
         this.parent = null;
         this.d = null;
-        this.visited = false;
     }
 
     /**
