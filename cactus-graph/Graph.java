@@ -45,12 +45,6 @@ public class Graph {
         Vertex vertex1 = this.vertexSet.get(from);
         Vertex vertex2 = this.vertexSet.get(to);
 
-        // Verifica se há laços (auto-loop)
-        if (Objects.equals(vertex1.id, vertex2.id)) {
-            System.out.println("O grafo de entrada não pode ter laços.");
-            System.exit(1);
-        }
-
         // Se já existe aresta não adiciona
         if (!vertex1.neighborhood.containsKey(vertex2.id)){
             vertex1.addNeighbor(vertex2);
